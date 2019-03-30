@@ -141,9 +141,14 @@
                 <!-- Center content column -->
                 <div class="col-6">
                     @RenderBody()
-                    <ol class="tweet-list">
-                    </ol>
+                    <ol class="tweet-list"></ol>
                     <!-- End: tweet list -->
+                    <div class="form-group">
+                        <form method="POST">
+                            <textarea class="form-control" name="tweet" placeholder="Your tweet" required="required"></textarea>
+                            <button type="submit" class="btn btn-black">Tweeter</button>
+                            </form>
+                    </div>
                 </div>
                 <!-- End: Center content column -->
                 <div class="col right-col">

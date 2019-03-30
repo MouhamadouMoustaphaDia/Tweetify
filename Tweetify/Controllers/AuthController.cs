@@ -70,6 +70,27 @@ namespace Tweetify.Controllers
             }
         }
 
+
+        public IActionResult Tweeter()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Tweeter(Tweet t)
+        {
+            using (var context = new TweetifyContext())
+            {
+                
+                    t.Content = t.Content.ToLower();
+                    context.Tweets.Add(t);
+                    await context.SaveChangesAsync();
+                    return RedirectToAction("Login");
+                
+            }
+        }
+
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("UserId");
